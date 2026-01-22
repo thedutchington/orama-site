@@ -7,11 +7,11 @@ export default function TOSPage() {
             <div className="max-w-4xl w-full text-center relative z-10">
                 <RevealScan>
                     <h1 className="text-9xl font-bold mb-16 tracking-tight italic">
-                        <span className="text-moving-red">TOS.</span>
+                        <span className="text-moving-vibrant text-vibrant-glow">TOS.</span>
                     </h1>
                 </RevealScan>
 
-                <div className="glass-strong glass-active rounded-[3rem] p-20 relative overflow-hidden group border-white/5">
+                <div className="glass-vibrant rounded-[3rem] p-20 relative overflow-hidden group">
                     {/* Cinematic background glow */}
                     <div className="absolute inset-0 bg-radial-gradient from-accent-red/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
 

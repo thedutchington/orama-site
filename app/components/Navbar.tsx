@@ -17,40 +17,40 @@ export default function Navbar() {
             <span className="text-xl font-bold italic tracking-tighter">orama.</span>
           </Link>
 
-          <div className="flex items-center gap-6 md:gap-8">
+          <div className="flex items-center gap-2 sm:gap-4 lg:gap-8">
             <Link
               href="/"
-              className="text-[10px] md:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
+              className="text-[9px] sm:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
             >
               HOME
             </Link>
             <Link
               href="/resources"
-              className="text-[10px] md:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
+              className="hidden sm:block text-[9px] sm:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
             >
               RESOURCES
             </Link>
             <Link
               href="/staff"
-              className="text-[10px] md:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
+              className="hidden sm:block text-[9px] sm:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
             >
               STAFF
             </Link>
             <Link
               href="/blog"
-              className="text-[10px] md:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
+              className="hidden lg:block text-[9px] sm:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
             >
               BLOG
             </Link>
             <Link
               href="/tos"
-              className="hidden md:block text-[10px] md:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
+              className="hidden lg:block text-[9px] sm:text-xs font-bold meta-mono tracking-widest hover:text-accent-red transition-colors"
             >
               TOS
             </Link>
             <Link
               href="/contact"
-              className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[10px] md:text-xs font-bold meta-mono tracking-widest hover:bg-accent-red hover:text-white transition-all cursor-pointer relative z-10 border-trace overflow-hidden"
+              className="px-2 sm:px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-[9px] md:text-xs font-bold meta-mono tracking-widest hover:bg-accent-red hover:text-white transition-all cursor-pointer relative z-10 border-trace overflow-hidden"
             >
               <div className="border-trace-cover" />
               <span className="relative z-10">BOOKING</span>

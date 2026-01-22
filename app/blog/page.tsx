@@ -14,7 +14,7 @@ export default async function BlogIndexPage() {
             <div className="max-w-4xl mx-auto relative z-10">
                 <RevealScan>
                     <h1 className="text-8xl font-bold mb-16 tracking-tighter italic">
-                        <span className="text-moving-red">BLOG.</span>
+                        <span className="text-moving-vibrant text-vibrant-glow">BLOG.</span>
                     </h1>
                 </RevealScan>
 
