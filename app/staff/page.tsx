@@ -8,7 +8,7 @@ export default function StaffPage() {
             role: "Co-Founder, Policies Lead",
             subjects: "IM1, IM2, IM3, Chem, Pre AP Bio Tutor",
             initials: "CE",
-            image: "/CADEN_ERWIN.png",
+            image: "/CADEN_ERWIN.png?v=3",
             date: "Joined in 2025"
         },
         {
@@ -37,12 +37,15 @@ export default function StaffPage() {
                             className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-16 perspective-1000`}
                         >
                             {/* Profile Image */}
-                            <div className="w-full md:w-1/2 aspect-[4/3] glass-strong glass-active rounded-3xl relative overflow-hidden group transform-gpu transition-all duration-700 hover:scale-[1.02] hover:rotate-1 border-white/5">
+                            <div
+                                className={`w-full md:w-1/2 aspect-[4/3] glass-active rounded-3xl relative overflow-hidden group transform-gpu transition-all duration-700 hover:scale-[1.02] hover:rotate-1 border-white/5 ${member.name === 'caden erwin' ? '' : 'glass-strong'}`}
+                                style={member.name === 'caden erwin' ? { backgroundColor: '#fcfbf9' } : {}}
+                            >
                                 <Image
                                     src={member.image}
                                     alt={member.name}
                                     fill
-                                    className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 group-hover:scale-105"
+                                    className={`${member.name === 'caden erwin' ? 'object-contain p-8 group-hover:scale-110' : 'object-cover group-hover:scale-105'} opacity-80 group-hover:opacity-100 transition-all duration-700`}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
                                 <div className="absolute bottom-6 left-6 meta-mono text-xs text-accent-red font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">

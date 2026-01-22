@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-4 left-4 right-4 z-[999] glass-strong rounded-2xl border-white/5 shadow-2xl backdrop-blur-md">
+    <nav className="fixed top-4 left-4 right-4 z-[999] glass-strong rounded-2xl border-white/5 shadow-2xl backdrop-blur-md" suppressHydrationWarning>
       <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
