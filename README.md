@@ -1,11 +1,11 @@
-# Orama Website (v26.2)
+# Orama Website (v1.0.2)
 
 > **Tutoring, Simplified.**
 > The official web platform for Orama, the student-led tutoring service at Beaumont High School.
 
 ![Orama Banner](public/ORamA.png)
 
-## 📖 About Notus
+## 📖 About The Orama Website
 
 This repository contains the source code for the "Orama" website. The platform is designed to connect students with high-achieving peer tutors, provide access to academic resources, and offer a streamlined booking experience.
 
