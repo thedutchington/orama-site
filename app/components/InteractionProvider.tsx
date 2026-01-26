@@ -1,24 +1,42 @@
 "use client";
 
-import React, { createContext, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useRef } from 'react';
 
 const InteractionContext = createContext(null);
 
 export const InteractionProvider = ({ children }: { children: React.ReactNode }) => {
     const [mounted, setMounted] = React.useState(false);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
         setMounted(true);
+
         const handleMouseMove = (e: MouseEvent) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
 
             document.documentElement.style.setProperty('--mouse-x', `${x}%`);
             document.documentElement.style.setProperty('--mouse-y', `${y}%`);
+
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+
+            document.body.classList.remove('settled');
+
+            timeoutRef.current = setTimeout(() => {
+                document.body.classList.add('settled');
+            }, 2500);
         };
 
         window.addEventListener('mousemove', handleMouseMove);
-        return () => window.removeEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
     }, []);
 
     return (

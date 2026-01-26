@@ -101,54 +101,59 @@ export default function Navbar() {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-full w-72 bg-black/90 backdrop-blur-3xl z-[998] border-l border-white/10 shadow-[-20px_0_50px_rgba(0,0,0,0.5)] p-12 flex flex-col justify-center gap-8"
+            transition={{ type: "spring", damping: 30, stiffness: 200 }}
+            className="fixed top-0 right-0 h-full w-80 bg-black/90 backdrop-blur-3xl z-[998] border-l border-white/10 shadow-[-20px_0_50px_rgba(0,0,0,0.5)] p-12 flex flex-col justify-center"
           >
-            <div className="flex flex-col gap-6">
-              <Link
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className="text-sm font-bold meta-mono tracking-[0.3em] hover:text-accent-red transition-colors"
-              >
-                HOME
-              </Link>
-              <Link
-                href="/resources"
-                onClick={() => setIsOpen(false)}
-                className="text-sm font-bold meta-mono tracking-[0.3em] hover:text-accent-red transition-colors"
-              >
-                RESOURCES
-              </Link>
-              <Link
-                href="/staff"
-                onClick={() => setIsOpen(false)}
-                className="text-sm font-bold meta-mono tracking-[0.3em] hover:text-accent-red transition-colors"
-              >
-                STAFF
-              </Link>
-              <Link
-                href="/blog"
-                onClick={() => setIsOpen(false)}
-                className="text-sm font-bold meta-mono tracking-[0.3em] hover:text-accent-red transition-colors"
-              >
-                BLOG
-              </Link>
-              <Link
-                href="/tos"
-                onClick={() => setIsOpen(false)}
-                className="text-sm font-bold meta-mono tracking-[0.3em] hover:text-accent-red transition-colors"
-              >
-                TOS
-              </Link>
-            </div>
-
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-8 px-6 py-3 bg-accent-red rounded-xl text-xs font-bold meta-mono tracking-[0.2em] text-white hover:bg-accent-red/80 hover:scale-105 transition-all text-center shadow-[0_0_20px_rgba(255,45,85,0.3)]"
+            <motion.div
+              className="flex flex-col gap-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
             >
-              BOOKING
-            </Link>
+              {[
+                { href: "/", label: "HOME" },
+                { href: "/resources", label: "RESOURCES" },
+                { href: "/staff", label: "STAFF" },
+                { href: "/blog", label: "BLOG" },
+                { href: "/tos", label: "TOS" },
+              ].map((item) => (
+                <motion.div
+                  key={item.href}
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-sm font-bold meta-mono tracking-[0.3em] hover:text-accent-red transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-12 px-6 py-4 bg-accent-red rounded-xl text-xs font-bold meta-mono tracking-[0.2em] text-white hover:bg-accent-red/80 hover:scale-105 transition-all text-center shadow-[0_0_20px_rgba(255,45,85,0.3)] block"
+              >
+                BOOKING
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

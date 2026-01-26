@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RevealScan } from "./components/RevealScan";
 import { getSortedPostsData } from "../lib/blog";
+import { motion } from "framer-motion";
 
 export default async function Home() {
   return (
@@ -49,8 +50,19 @@ export default async function Home() {
               </h2>
             </RevealScan>
 
-            <div className="grid md:grid-cols-2 gap-8 flex-grow max-w-4xl">
-              <div className="glass-vibrant rounded-3xl p-8 hover:scale-[1.02] transition-all duration-300">
+            <motion.div
+              className="grid md:grid-cols-2 gap-8 flex-grow max-w-4xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ staggerChildren: 0.2 }}
+            >
+              <motion.div
+                className="glass-vibrant rounded-3xl p-8 hover:scale-[1.02] transition-all duration-300 card-glow"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
                 <p className="text-lg mb-4 leading-relaxed font-medium">
                   Orama provides wonderful and professional tutoring that actually helps. Their approach makes complex concepts clear and supports real learning and understanding.
                 </p>
@@ -63,9 +75,15 @@ export default async function Home() {
                     <div className="text-sm text-content-gray meta-mono uppercase tracking-tighter">Sophomore</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="glass-vibrant rounded-3xl p-8 hover:scale-[1.02] transition-all duration-300">
+              <motion.div
+                className="glass-vibrant rounded-3xl p-8 hover:scale-[1.02] transition-all duration-300 card-glow"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
                 <p className="text-lg mb-4 leading-relaxed font-medium">
                   Orama leads very well and asks clarifying questions to ensure full understanding. The visuals/diagrams are extremely helpful.
                 </p>
@@ -79,7 +97,7 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -93,31 +111,60 @@ export default async function Home() {
             </h2>
           </RevealScan>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass p-8 rounded-3xl border-t-2 border-accent-red/30 backdrop-blur-xl glass-active lg:hover:-translate-y-4 transition-transform duration-500">
+          <motion.div
+            className="grid md:grid-cols-3 gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
+          >
+            <motion.div
+              className="glass p-8 rounded-3xl border-t-2 border-accent-red/30 backdrop-blur-xl glass-active lg:hover:-translate-y-4 transition-transform duration-500 card-glow"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <div className="text-accent-red mb-4 font-mono text-xs tracking-widest uppercase">Integration</div>
               <h3 className="text-2xl font-bold mb-4">Your Control.</h3>
               <p className="text-content-gray leading-relaxed">
                 We put the power in your hands. Our systems are built to integrate seamlessly with your existing workflow, giving you total control over how you learn.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="glass p-8 rounded-3xl border-t-2 border-white/10 glass-active lg:hover:-translate-y-4 transition-transform duration-500">
+            <motion.div
+              className="glass p-8 rounded-3xl border-t-2 border-white/10 glass-active lg:hover:-translate-y-4 transition-transform duration-500 card-glow"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <div className="text-white/40 mb-4 font-mono text-xs tracking-widest uppercase">Accessibility</div>
               <h3 className="text-2xl font-bold mb-4">Free Tutoring.</h3>
               <p className="text-content-gray leading-relaxed">
                 Available to all Freshman through Junior students at Beaumont High School. Quality education shouldn't have a price tag.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="glass p-8 rounded-3xl border-t-2 border-accent-gray/30 glass-active lg:hover:-translate-y-4 transition-transform duration-500">
+            <motion.div
+              className="glass p-8 rounded-3xl border-t-2 border-accent-gray/30 glass-active lg:hover:-translate-y-4 transition-transform duration-500 card-glow"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <div className="text-accent-gray mb-4 font-mono text-xs tracking-widest uppercase">Excellence.</div>
               <h3 className="text-2xl font-bold mb-4">4.0 GPA Scholars.</h3>
               <p className="text-content-gray leading-relaxed">
                 Guided by top-performing students who maintain a 4.0 GPA and lead within ASB. Learn the exact habits and strategies used by those mastering the current curriculum.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div className="mt-8 glass-strong glass-active p-10 rounded-[2.5rem] border-white/5 flex flex-col md:flex-row items-center gap-8 lg:hover:scale-[1.01] transition-transform duration-500">
             <div className="w-20 h-20 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
@@ -147,15 +194,20 @@ export default async function Home() {
             </div>
 
             <div className="md:w-2/3 space-y-2">
-              {(await getSortedPostsData()).filter(p => p.featured).slice(0, 3).map((post) => (
-                <Link
+              {(await getSortedPostsData()).filter(p => p.featured).slice(0, 3).map((post, i) => (
+                <motion.div
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group flex flex-col sm:flex-row sm:items-center justify-between py-6 border-b border-white/5 transition-all hover:translate-x-2"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
                 >
-                  <h3 className="text-xl font-bold group-hover:text-accent-red transition-colors duration-300">
-                    {post.title}
-                  </h3>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col sm:flex-row sm:items-center justify-between py-6 border-b border-white/5 transition-all hover:translate-x-2"
+                  >
+                    <h3 className="text-xl font-bold group-hover:text-accent-red transition-colors duration-300">
+                      {post.title}
+                    </h3>
                   <div className="text-sm text-white/40 meta-mono uppercase tracking-widest mt-2 sm:mt-0" suppressHydrationWarning>
                     {new Date(post.date + 'T12:00:00').toLocaleDateString('en-US', {
                       month: 'short',
@@ -163,7 +215,8 @@ export default async function Home() {
                       year: 'numeric'
                     })}
                   </div>
-                </Link>
+                  </Link>
+                </motion.div>
               ))}
 
               <div className="pt-8">
