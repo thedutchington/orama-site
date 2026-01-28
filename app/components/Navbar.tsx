@@ -49,7 +49,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
+    <div>
       {/* Top Left Logo - Safe for SSR */}
       <nav className="fixed top-4 left-4 z-[999] pointer-events-none" suppressHydrationWarning>
         <Link
@@ -164,6 +164,6 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
         />
       )}
-    </>
+    </div>
   );
 }

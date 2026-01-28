@@ -28,6 +28,12 @@ export default function Footer() {
                     {/* Services Column */}
                     <div className="flex flex-col gap-4">
                         <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-content-gray meta-mono">Services</h4>
+                        <Link
+                            href="https://orama-ai-manager.vercel.app/"
+                            className="text-sm text-content-gray hover:text-accent-red transition-colors w-fit font-medium"
+                        >
+                            MNGR
+                        </Link>
                     </div>
 
                     {/* Legal Column */}

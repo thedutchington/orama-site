@@ -18,6 +18,15 @@ export default function ResourcesPage() {
             tag: "Whiteboard",
             why: "Excalidraw provides a superior collaborative drawing experience with faster performance and a more intuitive toolset. It has officially replaced Cassini following its deprecation, as Cassini no longer lived up to our high technical expectations.",
             initials: "ED"
+        },
+        {
+            name: "Orama AI MNGR",
+            description: "Orama MNGR",
+            image: "/MNGR.png",
+            link: "https://orama-ai-manager.vercel.app/",
+            tag: "AI Management",
+            why: "We use the Orama AI Manager app to centralize and orchestrate the AI components that power our personalized tutoring experience. It manages model selection, modes, and session state, allowing us to reliably provide AI-assisted services!",
+            initials: "OM"
         }
     ];
 
@@ -232,7 +241,7 @@ export default function ResourcesPage() {
                                                     className="inline-flex items-center gap-4 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-accent-red/50 hover:scale-[1.02] transition-all group/launch shadow-xl"
                                                 >
                                                     <span className="text-sm font-bold meta-mono uppercase tracking-[0.2em] group-hover/launch:text-accent-red transition-colors">
-                                                        Launch Whiteboard
+                                                        Launch
                                                     </span>
                                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-white/40 group-hover/launch:text-accent-red transition-colors">
                                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
