@@ -25,23 +25,13 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    {/* Services Column */}
-                    <div className="flex flex-col gap-4">
-                        <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-content-gray meta-mono">Services</h4>
-                        <Link
-                            href="https://orama-ai-manager.vercel.app/"
-                            className="text-sm text-content-gray hover:text-accent-red transition-colors w-fit font-medium"
-                        >
-                            MNGR
-                        </Link>
-                    </div>
 
                     {/* Legal Column */}
                     <div className="flex flex-col gap-4">
                         <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-content-gray meta-mono">Legal</h4>
                         <Link
                             href="/tos"
-                            className="text-sm text-content-gray hover:text-accent-red transition-colors w-fit font-medium"
+                            className="text-sm font-bold text-gray-300 hover:text-accent-indigo transition-colors uppercase tracking-widest meta-mono"
                         >
                             Terms of Service
                         </Link>
@@ -63,7 +53,7 @@ export default function Footer() {
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/5">
                     <div className="text-[15px] text-white/20 meta-mono uppercase tracking-[0.5em]">
-                        v1.0.2 // 2026
+                        v2.0.0 // Codename Advisory
                     </div>
                 </div>
             </div>

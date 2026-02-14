@@ -3,7 +3,7 @@ import { getSortedPostsData } from "../../lib/blog";
 import { RevealScan } from "../components/RevealScan";
 
 export const metadata = {
-    title: "Blog - Orama",
+    title: "Blog | Orama",
 };
 
 export default async function BlogIndexPage() {
@@ -13,8 +13,8 @@ export default async function BlogIndexPage() {
         <div className="min-h-screen py-24 px-6 relative">
             <div className="max-w-4xl mx-auto relative z-10">
                 <RevealScan>
-                    <h1 className="text-8xl font-bold mb-16 tracking-tighter italic">
-                        <span className="text-moving-vibrant text-vibrant-glow">BLOG.</span>
+                    <h1 className="text-8xl font-bold mb-16 tracking-tighter italic text-accent-indigo">
+                        BLOG.
                     </h1>
                 </RevealScan>
 
@@ -27,7 +27,7 @@ export default async function BlogIndexPage() {
                         >
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                 <div className="space-y-1">
-                                    <h2 className="text-2xl md:text-3xl font-bold group-hover:text-accent-red transition-colors duration-300">
+                                    <h2 className="text-2xl md:text-3xl font-bold group-hover:text-accent-indigo transition-colors duration-300">
                                         {post.title}
                                     </h2>
                                     <div className="text-sm text-white/40 meta-mono uppercase tracking-widest">

@@ -16,59 +16,41 @@ export interface BlogPost {
 }
 
 export async function getSortedPostsData() {
-    // Get file names under /content/blog
     const fileNames = fs.readdirSync(postsDirectory);
     const allPostsData = await Promise.all(fileNames.map(async (fileName) => {
-        // Remove ".md" from file name to get slug
         const slug = fileName.replace(/\.md$/, "");
-
-        // Read markdown file as string
         const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
+        const { data } = matter(fileContents);
 
-        // Use gray-matter to parse the post metadata section
-        const matterResult = matter(fileContents);
-
-        // Remove slug from data so it doesn't overwrite our filename-based slug
-        const { slug: _excludedSlug, ...data } = matterResult.data;
-
-        // Combine the data with the slug
         return {
             slug,
-            ...(data as { date: string; title: string; featured: boolean; author: string }),
+            title: data.title || "Untitled",
+            date: data.date || "2026-01-01",
+            featured: !!data.featured,
+            author: data.author || "Orama",
         };
     }));
 
-    // Sort posts by date
-    return allPostsData.sort((a, b) => {
-        if (a.date < b.date) {
-            return 1;
-        } else {
-            return -1;
-        }
-    });
+    return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export async function getPostData(slug: string): Promise<BlogPost> {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-
-    // Use remark to convert markdown into HTML string
     const processedContent = await remark()
         .use(html)
-        .process(matterResult.content);
+        .process(content);
     const contentHtml = processedContent.toString();
 
-    // Remove slug from data so it doesn't overwrite our authoritative slug
-    const { slug: _excludedSlug, ...data } = matterResult.data;
-
-    // Combine the data with the slug and contentHtml
     return {
         slug,
         contentHtml,
-        ...(data as { date: string; title: string; featured: boolean; author: string }),
+        title: data.title || "Untitled",
+        date: data.date || "2026-01-01",
+        featured: !!data.featured,
+        author: data.author || "Orama",
     };
 }

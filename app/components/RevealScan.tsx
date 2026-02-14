@@ -40,7 +40,7 @@ export const RevealScan = ({ children, className = "" }: { children: React.React
                     ease: "easeInOut",
                     times: [0, 0.2, 1]
                 }}
-                className="absolute top-1/2 -translate-y-1/2 h-full bg-gradient-to-r from-transparent via-accent-red to-transparent z-10 pointer-events-none mix-blend-plus-lighter blur-xl"
+                className="absolute top-1/2 -translate-y-1/2 h-full bg-gradient-to-r from-transparent via-accent-indigo to-transparent z-10 pointer-events-none mix-blend-plus-lighter blur-xl"
             />
         </div>
     );

@@ -37,8 +37,8 @@ export default function StaffPage() {
         <div className="min-h-screen py-24 px-6 relative">
             <div className="max-w-7xl mx-auto relative z-10">
                 <RevealScan>
-                    <h1 className="text-8xl font-bold mb-16 tracking-tighter italic">
-                        <span className="text-moving-vibrant text-vibrant-glow">STAFF.</span>
+                    <h1 className="text-8xl font-bold mb-16 tracking-tighter italic text-accent-indigo">
+                        STAFF.
                     </h1>
                 </RevealScan>
 
@@ -69,7 +69,7 @@ export default function StaffPage() {
                                     <h2 className="text-4xl font-bold mb-2 tracking-tighter capitalize">
                                         {member.name}
                                     </h2>
-                                    <div className="text-sm font-bold text-accent-red meta-mono uppercase tracking-[0.2em]">
+                                    <div className="text-sm font-bold text-accent-indigo meta-mono uppercase tracking-[0.2em]">
                                         {member.role}
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ export default function StaffPage() {
                                         />
                                         <button
                                             onClick={() => setSelectedMember(null)}
-                                            className="absolute top-6 left-6 p-3 bg-black/40 backdrop-blur-md rounded-full text-white hover:bg-accent-red transition-colors group z-20"
+                                            className="absolute top-6 left-6 p-3 bg-black/40 backdrop-blur-md rounded-full text-white hover:bg-accent-indigo transition-colors group z-20"
                                         >
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                                 <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -123,26 +123,26 @@ export default function StaffPage() {
                                     {/* Modal Info Side */}
                                     <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
                                         <div className="mb-12">
-                                            <div className="text-accent-red meta-mono text-sm uppercase tracking-[0.3em] mb-4">
+                                            <div className="text-accent-indigo meta-mono text-sm uppercase tracking-[0.3em] mb-4">
                                                 {selectedMember.role}
                                             </div>
                                             <h2 className="text-6xl font-bold tracking-tighter capitalize mb-2 italic">
                                                 {selectedMember.name}.
                                             </h2>
-                                            <div className="h-1 w-24 bg-accent-red/20 rounded-full" />
+                                            <div className="h-1 w-24 bg-accent-indigo/20 rounded-full" />
                                         </div>
 
                                         <div className="space-y-8">
                                             <div className="group/item">
                                                 <div className="meta-mono text-[10px] text-content-gray uppercase tracking-widest mb-1">Email Address</div>
-                                                <div className="text-xl font-medium text-gray-200 group-hover/item:text-accent-red transition-colors break-all">
+                                                <div className="text-xl font-medium text-gray-200 group-hover/item:text-accent-indigo transition-colors break-all">
                                                     {selectedMember.email}
                                                 </div>
                                             </div>
 
                                             <div className="group/item">
                                                 <div className="meta-mono text-[10px] text-content-gray uppercase tracking-widest mb-1">Contact Phone</div>
-                                                <div className="text-xl font-medium text-gray-200 group-hover/item:text-accent-red transition-colors">
+                                                <div className="text-xl font-medium text-gray-200 group-hover/item:text-accent-indigo transition-colors">
                                                     {selectedMember.phone}
                                                 </div>
                                             </div>
@@ -160,7 +160,7 @@ export default function StaffPage() {
                                                     target="_blank"
                                                     className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all group/insta"
                                                 >
-                                                    <div className="text-white/40 group-hover/insta:text-accent-red transition-colors">
+                                                    <div className="text-white/40 group-hover/insta:text-accent-indigo transition-colors">
                                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                                                     </div>
                                                     <span className="text-sm font-bold meta-mono uppercase tracking-widest text-gray-300 group-hover/insta:text-white transition-colors">
@@ -171,7 +171,7 @@ export default function StaffPage() {
                                         </div>
 
                                         <div className="mt-12 flex items-center gap-4 text-xs text-content-gray meta-mono uppercase tracking-widest">
-                                            <span className="w-2 h-2 bg-accent-red rounded-full animate-pulse" />
+                                            <span className="w-2 h-2 bg-accent-indigo rounded-full animate-pulse" />
                                             {selectedMember.date}
                                         </div>
                                     </div>

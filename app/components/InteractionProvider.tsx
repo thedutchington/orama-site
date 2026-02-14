@@ -1,8 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect } from 'react';
-
-const InteractionContext = createContext(null);
+import React, { useEffect } from 'react';
 
 export const InteractionProvider = ({ children }: { children: React.ReactNode }) => {
     const [mounted, setMounted] = React.useState(false);
@@ -22,10 +20,8 @@ export const InteractionProvider = ({ children }: { children: React.ReactNode })
     }, []);
 
     return (
-        <InteractionContext.Provider value={null}>
-            <div className="relative z-10" suppressHydrationWarning>
-                {children}
-            </div>
+        <div className="relative z-10">
+            {children}
             {mounted && (
                 <>
                     {/* Atmospheric Layers */}
@@ -35,19 +31,19 @@ export const InteractionProvider = ({ children }: { children: React.ReactNode })
 
                     <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
                         {/* Global Drifting Orbs - High Intensity */}
-                        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-red/30 rounded-full blur-[120px] animate-drift" />
-                        <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-accent-purple/25 rounded-full blur-[100px] animate-drift-slow" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-accent-violet/20 rounded-full blur-[150px] animate-pulse" />
+                        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-indigo/20 rounded-full blur-[120px] animate-drift" />
+                        <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-accent-indigo/15 rounded-full blur-[100px] animate-drift-slow" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-accent-indigo/10 rounded-full blur-[150px] animate-pulse" />
 
                         {/* High-Fidelity Particles */}
                         <div className="absolute top-[15%] left-[20%] w-1.5 h-1.5 bg-white/80 rounded-full blur-[1px] animate-pulse" />
-                        <div className="absolute top-[45%] left-[60%] w-3 h-3 bg-accent-red/60 rounded-full blur-[2px] animate-drift" />
+                        <div className="absolute top-[45%] left-[60%] w-3 h-3 bg-accent-indigo/60 rounded-full blur-[2px] animate-drift" />
                         <div className="absolute top-[75%] left-[15%] w-1.5 h-1.5 bg-white/60 rounded-full blur-[1px] animate-drift-slow" />
-                        <div className="absolute top-[25%] left-[85%] w-3 h-3 bg-accent-purple/50 rounded-full blur-[2px] animate-pulse" />
-                        <div className="absolute top-[60%] left-[40%] w-1.5 h-1.5 bg-accent-violet/80 rounded-full blur-[1px] animate-drift" />
+                        <div className="absolute top-[25%] left-[85%] w-3 h-3 bg-accent-indigo/40 rounded-full blur-[2px] animate-pulse" />
+                        <div className="absolute top-[60%] left-[40%] w-1.5 h-1.5 bg-accent-indigo/30 rounded-full blur-[1px] animate-drift" />
                     </div>
                 </>
             )}
-        </InteractionContext.Provider>
+        </div>
     );
 };

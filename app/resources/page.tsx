@@ -18,15 +18,6 @@ export default function ResourcesPage() {
             tag: "Whiteboard",
             why: "Excalidraw provides a superior collaborative drawing experience with faster performance and a more intuitive toolset. It has officially replaced Cassini following its deprecation, as Cassini no longer lived up to our high technical expectations.",
             initials: "ED"
-        },
-        {
-            name: "Orama AI MNGR",
-            description: "Orama MNGR",
-            image: "/MNGR.png",
-            link: "https://orama-ai-manager.vercel.app/",
-            tag: "AI Management",
-            why: "We use the Orama AI Manager app to centralize and orchestrate the AI components that power our personalized tutoring experience. It manages model selection, modes, and session state, allowing us to reliably provide AI-assisted services!",
-            initials: "OM"
         }
     ];
 
@@ -35,8 +26,8 @@ export default function ResourcesPage() {
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <RevealScan>
-                    <h1 className="text-8xl font-bold mb-4 italic">
-                        <span className="text-moving-vibrant text-vibrant-glow">RESOURCES.</span>
+                    <h1 className="text-8xl font-bold mb-4 italic text-accent-indigo">
+                        RESOURCES.
                     </h1>
                 </RevealScan>
 
@@ -78,7 +69,7 @@ export default function ResourcesPage() {
                         <Link
                             href="https://calendar.app.google/vyoLiYipnYVCcVua7"
                             target="_blank"
-                            className="text-xl text-accent-red font-bold hover:underline underline-offset-8 flex items-center gap-2"
+                            className="text-xl text-accent-indigo font-bold hover:underline underline-offset-8 flex items-center gap-2"
                         >
                             See Calendar.
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -106,7 +97,7 @@ export default function ResourcesPage() {
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                                     </div>
                                     <div>
-                                        <p className="font-bold group-hover:text-accent-red transition-colors">@oramaatbhs</p>
+                                        <p className="font-bold group-hover:text-accent-indigo transition-colors">@oramaatbhs</p>
                                         <p className="text-[10px] text-content-gray meta-mono uppercase tracking-widest">Official Instagram</p>
                                     </div>
                                 </Link>
@@ -132,7 +123,7 @@ export default function ResourcesPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                             >
-                                <div className="glass-vibrant aspect-[16/9] rounded-3xl relative overflow-hidden transform-gpu transition-all duration-700 group-hover:scale-[1.02] border border-white/10 active:scale-95 shadow-2xl">
+                                <div className="glass-vibrant aspect-[16/9] rounded-3xl relative overflow-hidden transform-gpu transition-all duration-700 group-hover:scale-[1.02] border border-white/10 active:scale-95 shadow-2xl shadow-accent-indigo/10">
                                     {/* Image with overlay */}
                                     <div className="absolute inset-0">
                                         <Image
@@ -149,10 +140,10 @@ export default function ResourcesPage() {
                                     {/* Content inside card */}
                                     <div className="absolute bottom-10 left-10 right-10">
                                         <div className="flex flex-col gap-2">
-                                            <div className="text-[10px] font-bold text-accent-red meta-mono uppercase tracking-[0.3em] mb-1">
+                                            <div className="text-[10px] font-bold text-accent-indigo meta-mono uppercase tracking-[0.3em] mb-1">
                                                 {tool.tag}
                                             </div>
-                                            <h3 className="text-4xl font-bold tracking-tighter italic">
+                                            <h3 className="text-4xl font-bold tracking-tighter italic text-accent-indigo">
                                                 {tool.name}.
                                             </h3>
                                             <p className="text-content-gray meta-mono text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
@@ -199,7 +190,7 @@ export default function ResourcesPage() {
                                         />
                                         <button
                                             onClick={() => setSelectedTool(null)}
-                                            className="absolute top-6 left-6 p-3 bg-black/40 backdrop-blur-md rounded-full text-white hover:bg-accent-red transition-colors group z-20"
+                                            className="absolute top-6 left-6 p-3 bg-black/40 backdrop-blur-md rounded-full text-white hover:bg-accent-indigo transition-colors group z-20"
                                         >
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                                 <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -210,13 +201,13 @@ export default function ResourcesPage() {
                                     {/* Modal Info Side */}
                                     <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
                                         <div className="mb-12">
-                                            <div className="text-accent-red meta-mono text-sm uppercase tracking-[0.3em] mb-4">
+                                            <div className="text-accent-indigo meta-mono text-sm uppercase tracking-[0.3em] mb-4">
                                                 {selectedTool.tag}
                                             </div>
-                                            <h2 className="text-6xl font-bold tracking-tighter capitalize mb-2 italic">
+                                            <h2 className="text-6xl font-bold tracking-tighter capitalize mb-2 italic text-accent-indigo">
                                                 {selectedTool.name}.
                                             </h2>
-                                            <div className="h-1 w-24 bg-accent-red/20 rounded-full" />
+                                            <div className="h-1 w-24 bg-accent-indigo/20 rounded-full" />
                                         </div>
 
                                         <div className="space-y-8">
@@ -238,12 +229,12 @@ export default function ResourcesPage() {
                                                 <Link
                                                     href={selectedTool.link}
                                                     target="_blank"
-                                                    className="inline-flex items-center gap-4 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-accent-red/50 hover:scale-[1.02] transition-all group/launch shadow-xl"
+                                                    className="inline-flex items-center gap-4 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-accent-indigo/50 hover:scale-[1.02] transition-all group/launch shadow-xl"
                                                 >
-                                                    <span className="text-sm font-bold meta-mono uppercase tracking-[0.2em] group-hover/launch:text-accent-red transition-colors">
+                                                    <span className="text-sm font-bold meta-mono uppercase tracking-[0.2em] group-hover/launch:text-accent-indigo transition-colors text-accent-indigo">
                                                         Launch
                                                     </span>
-                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-white/40 group-hover/launch:text-accent-red transition-colors">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-white/40 group-hover/launch:text-accent-indigo transition-colors">
                                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                                                         <polyline points="15 3 21 3 21 9" />
                                                         <line x1="10" y1="14" x2="21" y2="3" />

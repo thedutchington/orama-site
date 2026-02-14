@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const postData = await getPostData(slug);
     return {
-        title: `${postData.title} - Orama`,
+        title: `${postData.title} | Orama`,
     };
 }
 
@@ -20,7 +20,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <RevealScan>
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 text-white/40 hover:text-accent-red transition-colors meta-mono text-xs uppercase tracking-widest mb-12 group"
+                        className="inline-flex items-center gap-2 text-white/40 hover:text-accent-indigo transition-colors meta-mono text-xs uppercase tracking-widest mb-12 group"
                     >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:-translate-x-1 transition-transform">
                             <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -31,7 +31,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                 <RevealScan>
                     <div className="mb-12">
-                        <div className="text-accent-red meta-mono text-sm uppercase tracking-[0.3em] mb-4" suppressHydrationWarning>
+                        <div className="text-accent-indigo meta-mono text-sm uppercase tracking-[0.3em] mb-4" suppressHydrationWarning>
                             {new Date(postData.date + 'T12:00:00').toLocaleDateString('en-US', {
                                 month: 'long',
                                 day: 'numeric',
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                    [&_h6]:text-base [&_h6]:font-bold [&_h6]:mt-4 [&_h6]:mb-2 [&_h6]:text-white
                                    [&_p]:text-content-gray [&_p]:text-lg [&_p]:leading-relaxed [&_p]:mb-8
                                    [&_strong]:text-white [&_strong]:font-bold
-                                   [&_a]:text-accent-red [&_a]:no-underline hover:[&_a]:underline
+                                   [&_a]:text-accent-indigo [&_a]:no-underline hover:[&_a]:underline
                                    [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-8 [&_ul]:text-content-gray
                                    [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-8 [&_ol]:text-content-gray
                                    [&_li]:mb-2

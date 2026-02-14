@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #12121e;
-  /* significantly lighter indigo base */
+  --background: #0a0a0a;
+  /* OLED Dark Mode */
   --foreground: #ffffff;
-  --glass-bg: rgba(30, 30, 40, 0.8);
-  /* Lighter, more opaque glass */
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(15, 15, 25, 0.7);
+  /* Deeper, cleaner glass */
+  --glass-border: rgba(255, 255, 255, 0.1);
   --mouse-x: 50%;
   --mouse-y: 50%;
 }
@@ -18,16 +19,16 @@
   --color-glass-bg: var(--glass-bg);
   --color-glass-border: var(--glass-border);
 
-  /* Vision Pro Accent */
+  /* Advisory V2.0.0 Palette */
+  --color-accent-indigo: #4f46e5;
+  --color-accent-indigo-light: #818cf8;
   --color-accent-red: #ff2d55;
   --color-accent-gray: #8e8e93;
-  --color-content-gray: #e0e0e0;
-  --color-accent-purple: #a855f7;
-  --color-accent-violet: #8b5cf6;
+  --color-content-gray: #a1a1aa;
 
   /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-  --font-mono: "SF Mono", "Consolas", monospace;
+  --font-sans: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Fira Code", monospace;
 }
 
 body {
@@ -45,11 +46,11 @@ body {
   inset: 0;
   background-color: var(--background);
   background-image:
-    radial-gradient(at 0% 0%, rgba(255, 45, 85, 0.8) 0, transparent 60%),
-    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.7) 0, transparent 60%),
-    radial-gradient(at 50% 50%, rgba(168, 85, 247, 0.5) 0, transparent 70%),
-    radial-gradient(at 100% 100%, rgba(255, 45, 85, 0.6) 0, transparent 60%),
-    radial-gradient(at 0% 100%, rgba(168, 85, 247, 0.6) 0, transparent 60%);
+    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.4) 0, transparent 60%),
+    radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.3) 0, transparent 60%),
+    radial-gradient(at 50% 50%, rgba(79, 70, 229, 0.2) 0, transparent 70%),
+    radial-gradient(at 100% 100%, rgba(79, 70, 229, 0.3) 0, transparent 60%),
+    radial-gradient(at 0% 100%, rgba(129, 140, 248, 0.3) 0, transparent 60%);
   filter: blur(100px);
   z-index: -2;
   pointer-events: none;
@@ -169,11 +170,11 @@ body {
 /* Vibrant Gradient Text */
 .text-moving-vibrant {
   background: linear-gradient(90deg,
-      #ff2d55 0%,
-      #a855f7 25%,
-      #ff2d55 50%,
-      #a855f7 75%,
-      #ff2d55 100%);
+      #4f46e5 0%,
+      #818cf8 25%,
+      #4f46e5 50%,
+      #818cf8 75%,
+      #4f46e5 100%);
   background-size: 200% auto;
   color: transparent;
   background-clip: text;
@@ -184,9 +185,7 @@ body {
 /* Cinematic Typography Glow & Outline for Visibility */
 .text-vibrant-glow {
   filter:
-    drop-shadow(0 0 2px rgba(0, 0, 0, 1))
-    /* Sharp outline for standout */
-    drop-shadow(0 0 15px rgba(255, 45, 85, 0.5)) drop-shadow(0 0 30px rgba(168, 85, 247, 0.3));
+    drop-shadow(0 0 1px rgba(0, 0, 0, 1)) drop-shadow(0 0 10px rgba(79, 70, 229, 0.3)) drop-shadow(0 0 20px rgba(129, 140, 248, 0.2));
 }
 
 @keyframes shine {
@@ -231,8 +230,8 @@ body {
   height: 400%;
   background: conic-gradient(transparent 0deg,
       transparent 280deg,
-      #ff2d55 340deg,
-      #ff2d55 360deg);
+      #4f46e5 340deg,
+      #4f46e5 360deg);
   animation: border-rotate 4s linear infinite;
   z-index: -2;
   pointer-events: none;
@@ -248,8 +247,8 @@ body {
   height: 400%;
   background: conic-gradient(transparent 0deg,
       transparent 280deg,
-      #ff2d55 340deg,
-      #ff2d55 360deg);
+      #4f46e5 340deg,
+      #4f46e5 360deg);
   animation: border-rotate 4s linear infinite;
   filter: blur(15px);
   opacity: 0.6;
